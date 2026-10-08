@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pricing – HostGPU</title>
+<meta name="description" content="Transparent GPU rental pricing. On-demand, interruptible and reserved rates, per-second billing and a cost calculator.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head><body>
+<header class="nav">
+  <a class="logo" href="index.html"><span class="mark"></span>HostGPU</a>
+  <nav id="menu"><a href="index.html#market">Marketplace</a><a href="index.html#how">How it works</a><a href="pricing.html">Pricing</a><a href="index.html#host">Rent out your GPUs</a></nav>
+  <div class="nav-cta"><a class="btn ghost" href="#">Log in</a><a class="btn" href="#">Sign up</a></div>
+  <button class="burger" aria-label="Menu" onclick="document.body.classList.toggle('open')">☰</button>
+</header>
+<main class="page">
+  <h1>Simple GPU pricing. Pay for what you run.</h1>
+  <p class="lead">Rates are per GPU per hour and billed per second. Final prices are set by each host, so the marketplace shows live offers at or above the starting prices below.</p>
+
+  <div class="tabs" role="group" aria-label="Billing type">
+    <button data-t="od" aria-pressed="true">On-demand</button>
+    <button data-t="in" aria-pressed="false">Interruptible</button>
+    <button data-t="re" aria-pressed="false">Reserved</button>
+  </div>
+  <div class="card table-wrap"><table>
+    <thead><tr><th>GPU</th><th>VRAM</th><th>Starting price / hr</th><th>Best for</th><th></th></tr></thead>
+    <tbody id="rates"></tbody></table></div>
+  <p class="note" id="tabNote"></p>
+
+  <h2>Three ways to rent</h2>
+  <div class="cols">
+    <div class="card"><h3>On-demand</h3><p>Fixed price, guaranteed until you stop it. Best for production, demos and anything you can't afford to lose.</p></div>
+    <div class="card"><h3>Interruptible</h3><p>Bid on spare capacity at a steep discount. Your instance can pause if a higher bid arrives, so save checkpoints often.</p></div>
+    <div class="card"><h3>Reserved</h3><p>Commit to a month and get a lower rate on the same on-demand instance. Pay up front and run it as long as you like.</p></div>
+  </div>
+
+  <h2>Estimate your cost</h2>
+  <div class="card">
+    <div class="calc">
+      <label>GPU<select id="cGpu"></select></label>
+      <label>Number of GPUs<input id="cN" type="number" min="1" max="64" value="1"></label>
+      <label>Hours<input id="cH" type="number" min="1" value="40"></label>
+      <label>Billing<select id="cT"><option value="od">On-demand</option><option value="in">Interruptible</option><option value="re">Reserved</option></select></label>
+    </div>
+    <label style="display:grid;gap:4px;font-size:13px;font-weight:600;color:var(--muted);margin-top:14px;max-width:260px">Storage (GB, per month)<input id="cS" type="number" min="0" value="50"></label>
+    <div class="total" id="total"></div>
+  </div>
+
+  <h2>Other charges</h2>
+  <div class="card table-wrap"><table>
+    <thead><tr><th>Item</th><th>Price</th></tr></thead>
+    <tbody>
+      <tr><td>Compute</td><td>Per second, at the hourly rate shown</td></tr>
+      <tr><td>Storage (instance running or stopped)</td><td id="fStor"></td></tr>
+      <tr><td>Data in</td><td>Free</td></tr>
+      <tr><td>Data out</td><td id="fOut"></td></tr>
+      <tr><td>Minimum top-up</td><td id="fMin"></td></tr>
+      <tr><td>Platform fee</td><td id="fFee"></td></tr>
+    </tbody></table></div>
+
+  <h2>How HostGPU compares</h2>
+  <div class="card table-wrap"><table>
+    <thead><tr><th>GPU, per hour</th><th>HostGPU (from)</th><th>RunPod Community</th><th>RunPod Secure</th><th>Lambda</th></tr></thead>
+    <tbody>
+      <tr><td>RTX 4090</td><td class="num hl">$0.34</td><td class="num">$0.34</td><td class="num">$0.69</td><td>Not offered</td></tr>
+      <tr><td>A100 80 GB</td><td class="num hl">$0.67</td><td class="num">$1.39 (PCIe)</td><td class="num">n/a</td><td class="num">$1.29</td></tr>
+      <tr><td>H100 80 GB</td><td class="num hl">$1.49</td><td class="num">$1.99 (PCIe)</td><td class="num">$2.89 (PCIe)</td><td class="num">$3.99 (SXM)</td></tr>
+    </tbody></table></div>
+  <p class="note">Competitor prices are published rates as of August 2026 and change often. Check each provider before you decide.</p>
+
+  <h2>Questions</h2>
+  <details><summary>Why do prices vary between listings?</summary><p>Each host sets their own price based on hardware, location, bandwidth and reliability. Verified datacenter hosts usually cost more than home or small-farm hosts.</p></details>
+  <details><summary>What happens when my credit runs out?</summary><p>Running instances are stopped and your data is kept for a grace period. Add credit and restart. Enable auto top-up to avoid interruptions.</p></details>
+  <details><summary>Do stopped instances still cost money?</summary><p>You only pay storage for stopped instances. GPU compute stops billing the second you stop.</p></details>
+  <details><summary>Can I get a refund?</summary><p>Unused credit can be refunded to your original payment method within 30 days. Used compute is not refundable.</p></details>
+  <details><summary>Do you offer volume discounts?</summary><p>Yes. For 8+ GPUs or monthly spend over $5,000, contact us for custom rates.</p></details>
+</main>
+<footer class="footer">
+  <div><a class="logo" href="index.html"><span class="mark"></span>HostGPU</a><p>hostgpu.online</p></div>
+  <div><h4>Product</h4><a href="index.html#market">Marketplace</a><a href="pricing.html">Pricing</a><a href="#">Documentation</a></div>
+  <div><h4>Company</h4><a href="#">About</a><a href="#">Contact</a><a href="#">Status</a></div>
+  <div><h4>Legal</h4><a href="#">Terms of service</a><a href="#">Privacy policy</a></div>
+  <p class="copy">© 2026 HostGPU. All rights reserved.</p>
+</footer>
+<script src="pricing.js"></script>
+</body></html>
