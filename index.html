@@ -1,100 +1,60 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="HostGPU — AI infrastructure and intelligent agent platforms. Building JARVIS, an AI-native operating layer for development, automation and infrastructure.">
-  <meta name="theme-color" content="#07090d">
-  <title>HostGPU — AI Infrastructure & Agent Platforms</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="HostGPU — GPU compute marketplace for AI, ML, inference and development.">
+<title>HostGPU — GPU Compute Marketplace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"></head>
 <body>
-  <div class="background-grid"></div>
-  <header class="nav">
-    <a class="brand" href="#top" aria-label="HostGPU home">
-      <span class="brand-mark">H</span>
-      <span>HostGPU</span>
-    </a>
-    <a class="nav-link" href="mailto:founder@hostgpu.online">Contact</a>
-  </header>
+<div class="glow g1"></div><div class="glow g2"></div>
+<header class="nav">
+<a class="brand" href="#"><b>H</b><span>Host<span>GPU</span></span></a>
+<nav><a href="#marketplace">Marketplace</a><a href="#how">How it works</a><a href="#host">Host your GPU</a><a href="#pricing">Pricing</a></nav>
+<div class="actions"><a href="#">Sign in</a><a class="btn small" href="#marketplace">Get started</a></div>
+</header>
+<main>
+<section class="hero">
+<div><div class="eyebrow">● GPU COMPUTE MARKETPLACE</div>
+<h1>Compute when<br><em>you need it.</em></h1>
+<p>Rent powerful GPU machines for AI training, inference, development and high-performance workloads. Simple, flexible and built for scale.</p>
+<div class="hero-buttons"><a class="btn" href="#marketplace">Browse GPUs →</a><a class="btn ghost" href="#host">Host your GPU</a></div>
+<div class="stats"><span><strong>24/7</strong> Infrastructure access</span><span><strong>AI-ready</strong> Workload focused</span><span><strong>Flexible</strong> Compute capacity</span></div></div>
+<div class="terminal"><div class="bar"><i></i><i></i><i></i><span>hostgpu / marketplace</span><b>● LIVE</b></div>
+<div class="rows"><div class="row head"><span>GPU</span><span>VRAM</span><span>PRICE / HR</span><span>STATUS</span></div>
+<div class="row"><strong>RTX 4090</strong><span>24 GB</span><b>$0.XX</b><em>Available</em></div>
+<div class="row"><strong>RTX 3090</strong><span>24 GB</span><b>$0.XX</b><em>Available</em></div>
+<div class="row"><strong>RTX 5090</strong><span>32 GB</span><b>$0.XX</b><em>Available</em></div></div>
+<footer>Real-time inventory will appear here <b>HOSTGPU</b></footer></div>
+</section>
 
-  <main id="top">
-    <section class="hero">
-      <div class="eyebrow"><span></span> AI INFRASTRUCTURE · AGENT PLATFORMS</div>
-      <h1>Build with intelligence.<br><em>Run without limits.</em></h1>
-      <p class="hero-copy">
-        HostGPU is building AI infrastructure and intelligent software that brings
-        powerful models, tools and autonomous workflows together.
-      </p>
-      <div class="actions">
-        <a class="button primary" href="#jarvis">Explore JARVIS</a>
-        <a class="button secondary" href="mailto:founder@hostgpu.online">Contact us</a>
-      </div>
-    </section>
+<section class="section" id="marketplace">
+<div class="heading"><div><div class="eyebrow">MARKETPLACE</div><h2>Find the right GPU.</h2></div><p>Search compute by hardware, price and availability.</p></div>
+<div class="market">
+<aside class="filters"><div class="filter-title">Filters <button id="clear">Clear</button></div>
+<label>GPU model<select id="gpu"><option value="all">Any GPU</option><option value="4090">RTX 4090</option><option value="3090">RTX 3090</option><option value="5090">RTX 5090</option><option value="A6000">RTX A6000</option></select></label>
+<label>Minimum VRAM<select id="vram"><option value="0">Any</option><option value="24">24 GB+</option><option value="32">32 GB+</option><option value="48">48 GB+</option></select></label>
+<label>Sort by<select id="sort"><option value="price">Lowest price</option><option value="vram">Most VRAM</option></select></label>
+<div class="note">✓ Verified hardware and provider information will appear as the platform expands.</div></aside>
+<div><div class="result"><span id="count">4 offers</span><span>On-demand · USD / hour</span></div>
+<div id="cards">
+<article class="card" data-gpu="4090" data-vram="24" data-price=".49"><div class="gpu"><b>GPU</b><div><strong>NVIDIA RTX 4090</strong><small>24 GB VRAM · CUDA ready</small></div></div><div><small>CPU</small><strong>16 vCPU</strong></div><div><small>RAM</small><strong>64 GB</strong></div><div><small>Storage</small><strong>500 GB NVMe</strong></div><div class="price"><small>from</small><strong>$0.49</strong><small>/hr</small></div><button>View offer</button></article>
+<article class="card" data-gpu="3090" data-vram="24" data-price=".35"><div class="gpu"><b>GPU</b><div><strong>NVIDIA RTX 3090</strong><small>24 GB VRAM · CUDA ready</small></div></div><div><small>CPU</small><strong>12 vCPU</strong></div><div><small>RAM</small><strong>48 GB</strong></div><div><small>Storage</small><strong>500 GB NVMe</strong></div><div class="price"><small>from</small><strong>$0.35</strong><small>/hr</small></div><button>View offer</button></article>
+<article class="card" data-gpu="5090" data-vram="32" data-price=".89"><div class="gpu"><b>GPU</b><div><strong>NVIDIA RTX 5090</strong><small>32 GB VRAM · CUDA ready</small></div></div><div><small>CPU</small><strong>24 vCPU</strong></div><div><small>RAM</small><strong>96 GB</strong></div><div><small>Storage</small><strong>1 TB NVMe</strong></div><div class="price"><small>from</small><strong>$0.89</strong><small>/hr</small></div><button>View offer</button></article>
+<article class="card" data-gpu="A6000" data-vram="48" data-price=".72"><div class="gpu"><b>GPU</b><div><strong>NVIDIA RTX A6000</strong><small>48 GB VRAM · CUDA ready</small></div></div><div><small>CPU</small><strong>20 vCPU</strong></div><div><small>RAM</small><strong>128 GB</strong></div><div><small>Storage</small><strong>1 TB NVMe</strong></div><div class="price"><small>from</small><strong>$0.72</strong><small>/hr</small></div><button>View offer</button></article>
+</div></div></div>
+</section>
 
-    <section class="product" id="jarvis">
-      <div class="section-label">01 / PRODUCT</div>
-      <div class="product-grid">
-        <div>
-          <div class="product-name">JARVIS<span>OS</span></div>
-          <h2>An AI-native operating layer for your digital world.</h2>
-        </div>
-        <div class="product-copy">
-          <p>
-            JARVIS is an intelligent agent platform designed to connect advanced
-            cloud and local AI models with tools, applications and autonomous workflows
-            through a single conversational interface.
-          </p>
-          <p>
-            It is designed for development, infrastructure automation, research and
-            everyday computer workflows — with a hybrid architecture that can use
-            cloud intelligence while retaining local-model resilience and privacy.
-          </p>
-        </div>
-      </div>
-    </section>
+<section class="section border" id="how"><div class="heading center"><div><div class="eyebrow">HOW IT WORKS</div><h2>From GPU to workload.</h2></div><p>Designed around a simple provider-to-customer compute flow.</p></div>
+<div class="steps"><div><b>01</b><h3>Choose a GPU</h3><p>Compare hardware, capacity and pricing.</p></div><div><b>02</b><h3>Configure</h3><p>Select your environment and workload requirements.</p></div><div><b>03</b><h3>Deploy</h3><p>Launch your compute instance and start working.</p></div><div><b>04</b><h3>Scale</h3><p>Run longer, stop when finished or add capacity.</p></div></div></section>
 
-    <section class="capabilities">
-      <div class="section-label">02 / CAPABILITIES</div>
-      <div class="cards">
-        <article class="card">
-          <span class="number">01</span>
-          <h3>Agentic Workflows</h3>
-          <p>Turn natural-language objectives into multi-step actions across connected tools and services.</p>
-        </article>
-        <article class="card">
-          <span class="number">02</span>
-          <h3>Hybrid AI</h3>
-          <p>Combine cloud reasoning with local models for flexibility, resilience and efficient execution.</p>
-        </article>
-        <article class="card">
-          <span class="number">03</span>
-          <h3>Developer Automation</h3>
-          <p>Support coding, infrastructure, CI/CD, research and operational workflows from one interface.</p>
-        </article>
-      </div>
-    </section>
+<section class="host" id="host"><div><div class="eyebrow">FOR GPU PROVIDERS</div><h2>Turn idle GPU capacity into revenue.</h2><p>Connect your hardware to HostGPU and make compute capacity available to customers when your machines are not being used.</p><a class="btn" href="mailto:founder@hostgpu.online?subject=Host%20my%20GPU">Become a host →</a></div>
+<div class="host-grid"><div><b>01</b>Connect hardware</div><div><b>02</b>Verify your node</div><div><b>03</b>Set availability</div><div><b>04</b>Earn from rentals</div></div></section>
 
-    <section class="vision">
-      <div class="section-label">03 / VISION</div>
-      <blockquote>
-        “Make intelligent computing feel less like using software
-        <span>and more like working with an intelligent system.</span>”
-      </blockquote>
-    </section>
-
-    <section class="contact">
-      <div>
-        <div class="section-label">04 / CONNECT</div>
-        <h2>Building the next layer of AI infrastructure.</h2>
-      </div>
-      <a class="contact-email" href="mailto:founder@hostgpu.online">founder@hostgpu.online ↗</a>
-    </section>
-  </main>
-
-  <footer>
-    <span>© 2026 HostGPU</span>
-    <span>hostgpu.online</span>
-  </footer>
-</body>
-</html>
+<section class="section" id="pricing"><div class="heading center"><div><div class="eyebrow">BUILT FOR SCALE</div><h2>Simple compute economics.</h2></div><p>Start small and scale as your requirements grow.</p></div>
+<div class="pricing"><div><small>ON-DEMAND</small><h3>Flexible</h3><p>Pay for compute while your workload is running.</p></div><div class="featured"><small>MARKETPLACE</small><h3>Competitive</h3><p>Discover capacity from independent GPU providers.</p></div><div><small>PROVIDERS</small><h3>Earn</h3><p>Monetize unused GPU capacity through the platform.</p></div></div></section>
+<section class="cta"><div><div class="eyebrow">HOSTGPU</div><h2>Build. Train. Deploy.</h2><p>GPU infrastructure for the next generation of AI workloads.</p></div><a class="btn" href="#marketplace">Explore marketplace →</a></section>
+</main>
+<footer><a class="brand" href="#"><b>H</b><span>Host<span>GPU</span></span></a><span>© 2026 HostGPU. GPU compute marketplace.</span><a href="mailto:founder@hostgpu.online">founder@hostgpu.online</a></footer>
+<div id="toast">Offer details will be available when the HostGPU marketplace backend is connected.</div>
+<script src="app.js"></script></body></html>

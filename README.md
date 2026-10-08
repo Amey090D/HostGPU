@@ -1,16 +1,15 @@
-# HostGPU Website
+# HostGPU Marketplace Website
 
-Static landing page for HostGPU / JARVIS.
+Professional static marketplace-style website for HostGPU.
 
 ## Files
 - index.html
 - styles.css
+- app.js
+- README.md
 
-## Deployment
-This is a plain static website and can be deployed on GitHub Pages, Cloudflare Pages, Vercel, Netlify, or any normal web server.
+## Deploy
+Replace the current files in your HostGPU GitHub repository with these files and push to `main`. Keep GitHub Pages on `main` / root and keep the existing custom domain `hostgpu.online`.
 
-## Domain
-Point `hostgpu.online` to the hosting provider after deployment.
-
-## Contact
-founder@hostgpu.online
+## Note
+The GPU offers and prices are demonstration UI only. They are not live inventory. The backend marketplace can be connected later.
